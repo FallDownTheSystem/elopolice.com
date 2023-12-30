@@ -1,17 +1,58 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { getImage } from 'astro:assets';
 interface Props {
 	perp: CollectionEntry<'perpetrators'>;
 }
+type ImageImport = Promise<{ default: ImageMetadata }>;
 const { perp } = Astro.props;
 const { Content } = await perp.render();
+const agentImageMetadata: ImageImport = import(`../images/agents/${perp.data.agent}_icon.webp`);
+const agentImage = await getImage({ src: agentImageMetadata, alt: perp.data.agent, format: 'webp' });
+const agentBackgroundUrl = `url('${agentImage.src}')`;
+
+const rankImageMetadata: ImageImport = import(`../images/ranks/${perp.data.rank.replace(' ', '_')}_Rank.png`);
+const rankImage = await getImage({ src: rankImageMetadata, alt: perp.data.rank, format: 'webp' });
+const rankBackgroundUrl = `url('${rankImage.src}')`;
+
+const mapImageMetadata: ImageImport = import(`../images/maps/Loading_Screen_${perp.data.map}.webp`);
+const mapImage = await getImage({ src: mapImageMetadata, alt: perp.data.map, format: 'webp' });
+const mapBackgroundUrl = `url('${mapImage.src}')`;
 ---
 
 <li>
-	<span class="font-display text-3xl">{perp.data.name}</span>
+	<span class="font-display text-3xl">
+		<div class="map-bg box-content inline-block size-16 border-2 border-gray-200">
+			<div class="agent-bg relative box-border inline-block size-16">
+				<div class="rank-bg absolute -right-10 -top-0 box-border inline-block size-8"></div>
+			</div>
+		</div>
+		<span>{perp.data.name}</span>
+	</span>
 	<span class="text-base">
 		<Content />
 	</span>
 </li>
 
-<style></style>
+<style define:vars={{ agentBackgroundUrl, rankBackgroundUrl, mapBackgroundUrl }}>
+	.agent-bg {
+		background-image: var(--agentBackgroundUrl);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.rank-bg {
+		background-image: var(--rankBackgroundUrl);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.map-bg {
+		background-image: var(--mapBackgroundUrl);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+</style>

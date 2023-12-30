@@ -1,7 +1,7 @@
 ---
 name: Cyka
-team: Enemy
-rank: Ascendant 2
+team: Ally
+rank: Immortal 1
 agent: Yoru
 result: Won
 map: Haven
