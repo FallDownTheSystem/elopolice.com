@@ -7,5 +7,33 @@
 		"typescriptreact", // Enable .tsx
 		"vue" // Enable .vue
 	],
-	"eslint.codeActionsOnSave.mode": "all"
+	"eslint.codeActionsOnSave.mode": "all",
+	"iconify.languageIds": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"vue",
+		"svelte",
+		"html",
+		"pug",
+		"json",
+		"yaml",
+		"astro"
+	],
+	"iconify.position": "after",
+	"iconify.inplace": false,
+	"editor.formatOnSave": true,
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[astro]": {
+		"editor.defaultFormatter": "astro-build.astro-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }

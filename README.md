@@ -1,40 +1,45 @@
-# Astro Starter Kit: Basics
+# ELOPolice.com
 
-```sh
-npm create astro@latest -- --template basics
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+A site for the ELO Police Department, patrolling the Valorant servers.
 
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+└─ .
+   ├─ .eslintrc.mjs // ESLint config
+   ├─ .prettierrc.js // Prettier config
+   ├─ .prettierignore // Prettier ignore file
+   ├─ astro.config.mjs // Astro config, adds tailwindcss and unplugin icons
+   ├─ LICENSE
+   ├─ package.json // Lists dependencies and commands that are listed below
+   ├─ pnpm-lock.yaml // pnpm lock file
+   ├─ public // static assets
+   │  └─ favicon.svg
+   ├─ README.md // The file you're reading right now
+   ├─ src
+   │  ├─ components // Partials used to compose pages or other components
+   │  │  └─ <Component>.astro
+   │  ├─ content // Markdown and json files that can be imported and rendered as content
+   │  │  ├─ config.ts // Defines schemas for different collections
+   │  │  └─ perpetrators // Folder containing a collection
+   │  │     └─ <name>.md
+   │  ├─ env.d.ts
+   │  ├─ images // Images that will be imported and optimized by Astro
+   │  │  ├─ agents
+   │  │  │  └─ <Agent>_icon.webp
+   │  │  ├─ maps
+   │  │  │  └─ Loading_Screen_<Map>.webp
+   │  │  └─ ranks
+   │  │     └─ <Rank>_Rank.png
+   │  ├─ layouts // Scaffolding for a page, contains header, navigation, footer, etc.
+   │  │  └─ Layout.astro
+   │  └─ pages // `.astro` or `.md` files that are exposed as routes
+   │     └─ index.astro // The default entry page
+   ├─ tailwind.config.mjs // Tailwind CSS config
+   └─ tsconfig.json // Typescript compiler config
+```
 
 ## 🧞 Commands
 
