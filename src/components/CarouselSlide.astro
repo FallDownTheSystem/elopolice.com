@@ -1,0 +1,22 @@
+---
+import ArrowLeftIcon from '~icons/heroicons/arrow-left-circle-solid';
+import ArrowRightIcon from '~icons/heroicons/arrow-right-circle-solid';
+
+const { slideNumber, totalSlides } = Astro.props;
+---
+
+<div id={`slide${slideNumber}`} class="relative h-[50vh] min-w-full snap-center overflow-hidden pt-4">
+	<slot />
+	<a
+		href={`#slide${slideNumber > 1 ? slideNumber - 1 : totalSlides}`}
+		class="group absolute left-4 top-1/2 z-10 m-0 flex size-8 -translate-y-1/2 transform rounded-full"
+	>
+		<ArrowLeftIcon class="size-8 opacity-50 group-hover:opacity-80" />
+	</a>
+	<a
+		href={`#slide${slideNumber < totalSlides ? slideNumber + 1 : 1}`}
+		class="group absolute right-4 top-1/2 z-10 m-0 flex size-8 -translate-y-1/2 transform rounded-full"
+	>
+		<ArrowRightIcon class="size-8 opacity-50 group-hover:opacity-80" />
+	</a>
+</div>

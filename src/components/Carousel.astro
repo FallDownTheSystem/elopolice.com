@@ -1,0 +1,49 @@
+---
+import CarouselSlide from './CarouselSlide.astro';
+
+const slides = [
+	{ color: 'bg-indigo-500', text: 'Slide 1' },
+	{ color: 'bg-green-500', text: 'Slide 2' },
+	{ color: 'bg-orange-500', text: 'Slide 3' },
+];
+const totalSlides = slides.length;
+---
+
+<div class="relative">
+	<ol class="absolute bottom-2 left-0 right-0 z-10 m-0 list-none space-x-3 p-0 text-center">
+		{
+			slides.map((_, index) => (
+				<li class="inline-flex">
+					<a
+						href={`#slide${index + 1}`}
+						class="flex size-2.5 cursor-pointer rounded-full bg-white opacity-50 hover:opacity-80"
+					/>
+				</li>
+			))
+		}
+	</ol>
+	<div class="relative mb-2 flex w-full snap-x overflow-hidden scroll-smooth">
+		{
+			slides.map((slide, index) => (
+				<CarouselSlide slideNumber={index + 1} totalSlides={totalSlides}>
+					<div class={`block h-full w-full ${slide.color} text-center text-5xl text-white`}>{slide.text}</div>
+				</CarouselSlide>
+			))
+		}
+	</div>
+</div>
+
+<style>
+	ol:has(+ div > #slide1:target) > li > a[href='#slide1'],
+	ol:has(+ div > #slide2:target) > li > a[href='#slide2'],
+	ol:has(+ div > #slide3:target) > li > a[href='#slide3'],
+	ol:has(+ div > #slide4:target) > li > a[href='#slide4'],
+	ol:has(+ div > #slide5:target) > li > a[href='#slide5'],
+	ol:has(+ div > #slide6:target) > li > a[href='#slide6'],
+	ol:has(+ div > #slide7:target) > li > a[href='#slide7'],
+	ol:has(+ div > #slide8:target) > li > a[href='#slide8'],
+	ol:has(+ div > #slide9:target) > li > a[href='#slide9'],
+	ol:has(+ div > #slide10:target) > li > a[href='#slide10'] {
+		opacity: 100;
+	}
+</style>

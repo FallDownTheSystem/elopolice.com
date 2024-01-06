@@ -1,20 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 // import HeroiconsChatBubbleLeftEllipsisSolid from '~icons/heroicons/chat-bubble-left-ellipsis-20-solid';
-import { getCollection, getEntry } from 'astro:content';
-import MostWanted from '../components/MostWanted.astro';
-const perps = await getCollection('perpetrators');
-const mostWanted = perps
-	.filter(
-		(x) =>
-			(x.data.team === 'Enemy' && x.data.result === 'Lost') ||
-			(x.data.team === 'Ally' && x.data.result === 'Won'),
-	)
-	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+import MostWanted from '../components/MugShot.astro';
+import Carousel from '../components/Carousel.astro';
+import { mostWanted, arrests } from '../logic/perpetrators';
 ---
 
 <Layout>
-	<main>
+	<main class="scroll-smooth">
+		<Carousel />
 		<h2 class="font-display text-4xl">Most Wanted</h2>
 		<p>These are the most wanted fugitives in Valorant. If you see them, please report them to the authorities.</p>
 		<ul class="mt-8 space-y-4">
