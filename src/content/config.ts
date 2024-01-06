@@ -33,6 +33,7 @@ const perpetratorsCollection = defineCollection({
 			.enum(['Ascent', 'Bind', 'Breeze', 'Fracture', 'Haven', 'Icebox', 'Lotus', 'Pearl', 'Split', 'Sunset'])
 			.default('Ascent'),
 		name: z.string(),
+		tag: z.string().max(5),
 		rank: z
 			.custom<`${'Iron' | 'Bronze' | 'Silver' | 'Gold' | 'Platinum' | 'Diamond' | 'Ascendant' | 'Immortal'} ${
 				| '1'
