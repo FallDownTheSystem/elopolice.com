@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 // import HeroiconsChatBubbleLeftEllipsisSolid from '~icons/heroicons/chat-bubble-left-ellipsis-20-solid';
-import MostWanted from '../components/MugShot.astro';
+import MugShot from '../components/MugShot.astro';
 import Carousel from '../components/Carousel.astro';
 import { mostWanted, arrests } from '../logic/perpetrators';
 ---
@@ -12,7 +12,7 @@ import { mostWanted, arrests } from '../logic/perpetrators';
 		<h2 class="font-display text-4xl">Most Wanted</h2>
 		<p>These are the most wanted fugitives in Valorant. If you see them, please report them to the authorities.</p>
 		<ul class="mt-8 space-y-4">
-			{mostWanted.map((perp) => <MostWanted perp={perp} />)}
+			{mostWanted.map((perp) => <MugShot perp={perp} />)}
 		</ul>
 	</main>
 </Layout>
