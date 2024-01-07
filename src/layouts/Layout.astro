@@ -13,19 +13,44 @@ const title = 'ELO Police Department';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
 	</head>
-	<body class="bg-zinc-800">
+	<body>
 		<header>
 			<div class="bg-white p-5 text-center font-display text-5xl font-medium">{title}</div>
 			<nav class="bg-blue-600/80 p-4">
-				<ul class="flex justify-center space-x-8">
-					<li><a href="/about" class="text-white">About us</a></li>
-					<li><a href="/services" class="text-white">Services</a></li>
-					<li><a href="/bureaus" class="text-white">Bureaus</a></li>
+				<ul class="flex justify-center space-x-12">
+					<li><a href="/" class="text-white">About us</a></li>
+					<li><a href="/rules" class="text-white">Rules</a></li>
+					<li><a href="/records" class="text-white">Records</a></li>
 					<li><a href="/careers" class="text-white">Careers</a></li>
+					<li><a href="/report" class="text-white">File a report</a></li>
 				</ul>
 			</nav>
 		</header>
-		<slot />
+		<main>
+			<slot />
+		</main>
+		<footer class="bg-gray-900 px-4 py-16 text-sm font-extralight text-gray-300">
+			<div class="mx-auto max-w-xl">
+				<div class="grid grid-cols-4 gap-4">
+					<div class="col-span-1">Badge Logo Placeholder</div>
+					<div class="col-span-1 space-y-1">
+						<a href="/about" class="block">About</a>
+						<a href="/contact" class="block">Contact</a>
+						<a href="/privacy" class="block">Privacy</a>
+					</div>
+					<div class="col-span-1 space-y-1">
+						<a href="/terms" class="block">Terms</a>
+						<a href="/help" class="block">Help</a>
+						<a href="/sitemap" class="block">Sitemap</a>
+					</div>
+					<div class="col-span-1 space-y-1">
+						<a href="/faqs" class="block">FAQs</a>
+						<a href="/support" class="block">Support</a>
+						<a href="/feedback" class="block">Feedback</a>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>
 <style is:global></style>

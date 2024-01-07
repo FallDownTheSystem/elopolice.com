@@ -24,14 +24,14 @@ const mapBackgroundUrl = `url('${mapImage.src}')`;
 	<span class="font-display text-3xl">
 		<div class="map-bg box-content inline-block size-16 border-2 border-gray-200">
 			<div class="agent-bg relative box-border inline-block size-16">
-				<div class="rank-bg absolute -right-10 -top-0 box-border inline-block size-8"></div>
+				<div class="rank-bg absolute -right-12 -top-0 box-border inline-block size-10"></div>
 			</div>
 		</div>
-		<span>{perp.data.name}</span>
+		<span class="mugshot-name text-2xl">{perp.data.name}<span class="mugshot-tag">#{perp.data.tag}</span></span>
 	</span>
-	<span class="text-base">
+	<!-- <span class="text-base">
 		<Content />
-	</span>
+	</span> -->
 </li>
 
 <style define:vars={{ agentBackgroundUrl, rankBackgroundUrl, mapBackgroundUrl }}>
