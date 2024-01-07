@@ -2,7 +2,7 @@
 name: 'anexiety'
 tag: 'SWISH'
 team: 'Ally'
-rank: 'Ascentdant 2'
+rank: 'Ascendant 2'
 agent: 'Raze'
 result: 'Won'
 map: 'Bind'

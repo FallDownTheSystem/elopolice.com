@@ -2,7 +2,7 @@
 name: 'Vakte'
 tag: '0690'
 team: 'Ally'
-rank: 'Ascentdant 1'
+rank: 'Ascendant 1'
 agent: 'Jett'
 result: 'Won'
 map: 'Bind'

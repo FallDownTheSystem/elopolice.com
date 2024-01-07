@@ -2,7 +2,7 @@
 name: 'Sandzak'
 tag: 'KSV'
 team: 'Ally'
-rank: 'Ascentdant 2'
+rank: 'Ascendant 2'
 agent: 'Brimstone'
 result: 'Won'
 map: 'Bind'
