@@ -1,5 +1,7 @@
 ---
 import CarouselSlide from './CarouselSlide.astro';
+import { Image } from 'astro:assets';
+import OfficerDeadlock from '../images/officers/Officer_Deadlock.png';
 
 const slides = [
 	{ color: 'bg-indigo-500', text: 'Slide 1' },
@@ -22,11 +24,11 @@ const totalSlides = slides.length;
 			))
 		}
 	</ol>
-	<div class="relative mb-2 flex w-full snap-x overflow-hidden scroll-smooth">
+	<div class="relative flex w-full snap-x overflow-hidden scroll-smooth">
 		{
 			slides.map((slide, index) => (
 				<CarouselSlide slideNumber={index + 1} totalSlides={totalSlides}>
-					<div class={`block h-full w-full ${slide.color} text-center text-5xl text-white`}>{slide.text}</div>
+					<Image src={OfficerDeadlock} alt="Officer Deadlock" />
 				</CarouselSlide>
 			))
 		}
